@@ -14,7 +14,7 @@ RUN apt-get update && \
 	wget http://nginx.org/download/nginx-1.25.1.tar.gz && \
 	tar zxvf nginx-1.25.1.tar.gz && \
 	cd nginx-1.25.1 && \
-	./configure  --user=root --group=root --with-debug --with-ipv6 --with-http_ssl_module  --with-compat --add-module=/ModSecurity-nginx --without-http_access_module --without-http_auth_basic_module --without-http_autoindex_module --without-http_empty_gif_module --without-http_fastcgi_module --without-http_referer_module --without-http_memcached_module --without-http_scgi_module --without-http_split_clients_module --without-http_ssi_module --without-http_uwsgi_module && \
+	./configure  --user=root --group=root --with-debug --with-ipv6 --with-http_realip_module --with-http_ssl_module  --with-compat --add-module=/ModSecurity-nginx --without-http_access_module --without-http_auth_basic_module --without-http_autoindex_module --without-http_empty_gif_module --without-http_fastcgi_module --without-http_referer_module --without-http_memcached_module --without-http_scgi_module --without-http_split_clients_module --without-http_ssi_module --without-http_uwsgi_module && \
 	make && \
 	make install && \
 	cd / && \
