@@ -24,10 +24,5 @@ RUN apt-get update && \
 	mv /usr/local/nginx/conf/rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf.example  /usr/local/nginx/conf/rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf && \
 	apt-get remove -y --purge apt-utils autoconf automake build-essential git pkgconf && \
 	apt-get autoremove -y
-CMD ./usr/local/nginx/sbin/nginx -g 'daemon off;'
 EXPOSE 80
-	
-	
-	
-	
-	
+CMD ["nginx", "-g", "daemon off;"]
