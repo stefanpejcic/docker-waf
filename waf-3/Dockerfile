@@ -24,10 +24,7 @@ RUN apt-get update && \
 	mv /usr/local/nginx/conf/rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf.example  /usr/local/nginx/conf/rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf && \
 	apt-get remove -y --purge apt-utils autoconf automake build-essential git pkgconf && \
 	apt-get autoremove -y
-COPY nginx.conf /usr/local/nginx/conf/nginx.conf
-COPY modsec_includes.conf /usr/local/nginx/conf/modsec_includes.conf
-COPY modsecurity.conf /usr/local/nginx/conf/modsecurity.conf
-COPY crs-setup.conf /usr/local/nginx/conf/rules/crs-setup.conf
+COPY /etc/openpanel/nginx/nginx.conf /usr/local/nginx/conf/nginx.conf
 CMD ./usr/local/nginx/sbin/nginx -g 'daemon off;'
 EXPOSE 80
 	
